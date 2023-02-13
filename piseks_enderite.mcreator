@@ -1,0 +1,32 @@
+{
+  "mod_elements": [],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {}
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "piseks_enderite",
+    "modName": "Pisek\u0027s Enderite 2",
+    "version": "2.1",
+    "description": "Just new tier of tools",
+    "author": "Písek Pískovec",
+    "websiteURL": "https://github.com/Piseks-Mods/Fundys-Cursed-Food",
+    "license": "MIT License",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "credits": "Source code: https://github.com/Piseks-Mods/Piseks-Enderite",
+    "modElementsPackage": "cz.pisekpiskovec.piseksenderite",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202200234517
+}

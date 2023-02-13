@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT License"
+
+[[mods]]
+modId="piseks_enderite"
+version="2.1"
+displayName="Pisek's Enderite 2"
+credits="Source code: https://github.com/Piseks-Mods/Piseks-Enderite"
+displayURL="https://github.com/Piseks-Mods/Fundys-Cursed-Food"
+authors="Písek Pískovec"
+description='''
+Just new tier of tools
+'''
+
+[[dependencies.piseks_enderite]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+
