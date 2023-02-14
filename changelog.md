@@ -1,4 +1,5 @@
-[+] Added mod icon.
+[+] Added mod icon.\
+[+] Added creative tab.
 
 [-] Removed tooltips.
 

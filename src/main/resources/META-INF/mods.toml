@@ -8,9 +8,10 @@ version="2.1"
 displayName="Pisek's Enderite 2"
 credits="Source code: https://github.com/Piseks-Mods/Piseks-Enderite"
 displayURL="https://github.com/Piseks-Mods/Fundys-Cursed-Food"
+logoFile="logo.png"
 authors="Písek Pískovec"
 description='''
-Just new tier of tools
+Mysterious metal from The Void dimension
 '''
 
 [[dependencies.piseks_enderite]]
