@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "piseks_enderite:blocks/enderite_block",
+    "up": "piseks_enderite:blocks/enderite_block",
+    "north": "piseks_enderite:blocks/enderite_block",
+    "east": "piseks_enderite:blocks/enderite_block",
+    "south": "piseks_enderite:blocks/enderite_block",
+    "west": "piseks_enderite:blocks/enderite_block",
+    "particle": "piseks_enderite:blocks/enderite_block"
+  }
+}

@@ -1,9 +1,74 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "Enderite",
+      "type": "armor",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite",
+      "metadata": {
+        "eh": true,
+        "el": true,
+        "eb": true,
+        "ec": true
+      }
+    },
+    {
+      "name": "AlienStone",
+      "type": "block",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "alien_stone"
+    },
+    {
+      "name": "CreativeTab",
+      "type": "tab",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "creative_tab"
+    },
+    {
+      "name": "EnderiteShard",
+      "type": "item",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_shard"
+    },
+    {
+      "name": "EnderiteCrystals",
+      "type": "item",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_crystals"
+    },
+    {
+      "name": "EnderiteBlock",
+      "type": "block",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_block"
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "block.piseks_enderite.enderite_block": "Block of Enderite",
+      "item.piseks_enderite.enderite_chestplate": "Enderite Body",
+      "item.piseks_enderite.enderite_leggings": "Enderite Leggings",
+      "block.piseks_enderite.alien_stone": "Alien Stone",
+      "item.piseks_enderite.enderite_boots": "Enderite Boots",
+      "item.piseks_enderite.enderite_crystals": "Enderite Crystals",
+      "item.piseks_enderite.enderite_shard": "Enderite Shard",
+      "itemGroup.tabcreative_tab": "Pisek\u0027s Enderite 2.0",
+      "item.piseks_enderite.enderite_helmet": "Enderite Helmet"
+    }
   },
   "foldersRoot": {
     "name": "~",

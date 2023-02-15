@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "piseks_enderite:block/alien_stone",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "piseks_enderite:block/alien_stone"
+    },
+    "axis=z": {
+      "model": "piseks_enderite:block/alien_stone",
+      "x": 90
+    }
+  }
+}

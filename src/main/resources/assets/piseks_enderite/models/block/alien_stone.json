@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "piseks_enderite:blocks/alien_stone_top",
+    "up": "piseks_enderite:blocks/alien_stone_top",
+    "north": "piseks_enderite:blocks/alien_stone_side",
+    "east": "piseks_enderite:blocks/alien_stone_side",
+    "south": "piseks_enderite:blocks/alien_stone_side",
+    "west": "piseks_enderite:blocks/alien_stone_side",
+    "particle": "piseks_enderite:blocks/alien_stone_top"
+  }
+}
