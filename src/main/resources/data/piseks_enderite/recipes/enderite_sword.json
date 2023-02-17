@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_sword"
+  },
+  "addition": {
+    "item": "piseks_enderite:enderite_crystals"
+  },
+  "result": {
+    "item": "piseks_enderite:enderite_sword"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "_fv": 33,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Blasting",
+    "xpReward": 2.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "enderite_shard",
+    "recipeShapeless": false,
+    "blastingInputStack": {
+      "value": "CUSTOM:AlienStone"
+    },
+    "blastingReturnStack": {
+      "value": "CUSTOM:EnderiteShard"
+    },
+    "name": "enderite_shard",
+    "namespace": "mod"
+  }
+}

@@ -18,5 +18,4 @@ run/
 # Other Files (In Eclipse)
 .classpath
 .project
-changelog.md
-changelog.md
+.changelog.md

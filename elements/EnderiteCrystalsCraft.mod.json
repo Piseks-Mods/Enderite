@@ -1,0 +1,46 @@
+{
+  "_fv": 33,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "enderite_crystals",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:EnderiteShard"
+      },
+      {
+        "value": "CUSTOM:EnderiteShard"
+      },
+      {
+        "value": "CUSTOM:EnderiteShard"
+      },
+      {
+        "value": "CUSTOM:EnderiteShard"
+      },
+      {
+        "value": "Items.DIAMOND"
+      },
+      {
+        "value": "Items.DIAMOND"
+      },
+      {
+        "value": "CUSTOM:EnderiteShard"
+      },
+      {
+        "value": "Items.DIAMOND"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:EnderiteCrystals"
+    },
+    "name": "enderite_crystals",
+    "namespace": "mod"
+  }
+}

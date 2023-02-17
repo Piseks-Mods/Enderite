@@ -93,6 +93,102 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "enderite_hoe"
+    },
+    {
+      "name": "EnderiteBlockSmith",
+      "type": "recipe",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_block_smith"
+    },
+    {
+      "name": "EnderiteCrystalsCraft",
+      "type": "recipe",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_crystals_craft"
+    },
+    {
+      "name": "EnderiteShardBlast",
+      "type": "recipe",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_shard_blast"
+    },
+    {
+      "name": "EnderiteSwordSmith",
+      "type": "recipe",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_sword_smith"
+    },
+    {
+      "name": "EnderiteHelmetSmith",
+      "type": "recipe",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_helmet_smith"
+    },
+    {
+      "name": "EnderiteChestplateSmith",
+      "type": "recipe",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_chestplate_smith"
+    },
+    {
+      "name": "EnderiteLeggingsSmith",
+      "type": "recipe",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_leggings_smith"
+    },
+    {
+      "name": "EnderiteBootsSmith",
+      "type": "recipe",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_boots_smith"
+    },
+    {
+      "name": "EnderiteShovelSmith",
+      "type": "recipe",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_shovel_smith"
+    },
+    {
+      "name": "EnderitePickaxeSmith",
+      "type": "recipe",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_pickaxe_smith"
+    },
+    {
+      "name": "EnderiteAxeSmith",
+      "type": "recipe",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_axe_smith"
+    },
+    {
+      "name": "EnderiteHoeSmith",
+      "type": "recipe",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_hoe_smith"
     }
   ],
   "variable_elements": [],

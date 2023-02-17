@@ -1,0 +1,34 @@
+{
+  "group": "enderite_crystals",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "piseks_enderite:enderite_shard"
+    },
+    {
+      "item": "piseks_enderite:enderite_shard"
+    },
+    {
+      "item": "piseks_enderite:enderite_shard"
+    },
+    {
+      "item": "piseks_enderite:enderite_shard"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "piseks_enderite:enderite_shard"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "item": "piseks_enderite:enderite_crystals",
+    "count": 1
+  }
+}
