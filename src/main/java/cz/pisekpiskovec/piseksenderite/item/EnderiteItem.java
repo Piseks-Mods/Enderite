@@ -30,7 +30,7 @@ public class EnderiteItem extends PiseksEnderiteModElements.ModElement {
 	public static final Item boots = null;
 
 	public EnderiteItem(PiseksEnderiteModElements instance) {
-		super(instance, 5);
+		super(instance, 10);
 	}
 
 	@Override

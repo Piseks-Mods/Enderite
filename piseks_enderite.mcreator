@@ -3,7 +3,7 @@
     {
       "name": "Enderite",
       "type": "armor",
-      "sortid": 5,
+      "sortid": 10,
       "compiles": true,
       "locked_code": false,
       "registry_name": "enderite",
@@ -25,7 +25,7 @@
     {
       "name": "CreativeTab",
       "type": "tab",
-      "sortid": 6,
+      "sortid": 11,
       "compiles": true,
       "locked_code": false,
       "registry_name": "creative_tab"
@@ -53,6 +53,46 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "enderite_block"
+    },
+    {
+      "name": "EnderiteSword",
+      "type": "tool",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_sword"
+    },
+    {
+      "name": "EnderiteShovel",
+      "type": "tool",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_shovel"
+    },
+    {
+      "name": "EnderitePickaxe",
+      "type": "tool",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_pickaxe"
+    },
+    {
+      "name": "EnderiteAxe",
+      "type": "tool",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_axe"
+    },
+    {
+      "name": "EnderiteHoe",
+      "type": "tool",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "enderite_hoe"
     }
   ],
   "variable_elements": [],
@@ -60,13 +100,18 @@
   "language_map": {
     "en_us": {
       "block.piseks_enderite.enderite_block": "Block of Enderite",
-      "item.piseks_enderite.enderite_chestplate": "Enderite Body",
+      "item.piseks_enderite.enderite_chestplate": "Enderite Chestplate",
+      "item.piseks_enderite.enderite_hoe": "Enderite Hoe",
       "item.piseks_enderite.enderite_leggings": "Enderite Leggings",
+      "item.piseks_enderite.enderite_shovel": "Enderite Shovel",
       "block.piseks_enderite.alien_stone": "Alien Stone",
-      "item.piseks_enderite.enderite_boots": "Enderite Boots",
       "item.piseks_enderite.enderite_crystals": "Enderite Crystals",
       "item.piseks_enderite.enderite_shard": "Enderite Shard",
-      "itemGroup.tabcreative_tab": "Pisek\u0027s Enderite 2.0",
+      "item.piseks_enderite.enderite_sword": "Enderite Sword",
+      "itemGroup.tabcreative_tab": "Pisek\u0027s Enderite 2",
+      "item.piseks_enderite.enderite_pickaxe": "Enderite Pickaxe",
+      "item.piseks_enderite.enderite_axe": "Enderite Axe",
+      "item.piseks_enderite.enderite_boots": "Enderite Boots",
       "item.piseks_enderite.enderite_helmet": "Enderite Helmet"
     }
   },

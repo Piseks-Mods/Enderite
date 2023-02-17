@@ -13,7 +13,7 @@ import cz.pisekpiskovec.piseksenderite.PiseksEnderiteModElements;
 @PiseksEnderiteModElements.ModElement.Tag
 public class CreativeTabItemGroup extends PiseksEnderiteModElements.ModElement {
 	public CreativeTabItemGroup(PiseksEnderiteModElements instance) {
-		super(instance, 6);
+		super(instance, 11);
 	}
 
 	@Override
