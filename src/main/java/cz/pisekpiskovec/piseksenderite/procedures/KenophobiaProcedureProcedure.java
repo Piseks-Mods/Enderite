@@ -19,7 +19,7 @@ public class KenophobiaProcedureProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (new Object() {
+		if (!(new Object() {
 			boolean check(Entity _entity) {
 				if (_entity instanceof LivingEntity) {
 					Collection<EffectInstance> effects = ((LivingEntity) _entity).getActivePotionEffects();
@@ -30,7 +30,7 @@ public class KenophobiaProcedureProcedure {
 				}
 				return false;
 			}
-		}.check(entity)) {
+		}.check(entity))) {
 			if (entity.getPosY() <= 0) {
 				if (entity instanceof LivingEntity)
 					((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.LEVITATION, (int) (entity.getPosY() * (-15)),
