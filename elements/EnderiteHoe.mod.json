@@ -15,7 +15,7 @@
     "efficiency": 10.0,
     "attackSpeed": 4.0,
     "enchantability": 23,
-    "damageVsEntity": 1.0,
+    "damageVsEntity": 2.0,
     "usageCount": 2643,
     "blocksAffected": [],
     "hasGlow": false,
@@ -26,6 +26,9 @@
     ],
     "immuneToFire": true,
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "AcrophobiaProcedure"
+    }
   }
 }

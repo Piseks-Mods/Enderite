@@ -10,6 +10,18 @@
     "textureLeggings": "enderite_leggings",
     "enableBoots": true,
     "textureBoots": "enderite_boots",
+    "onHelmetTick": {
+      "name": "KenophobiaProcedure"
+    },
+    "onBodyTick": {
+      "name": "KenophobiaProcedure"
+    },
+    "onLeggingsTick": {
+      "name": "KenophobiaProcedure"
+    },
+    "onBootsTick": {
+      "name": "KenophobiaProcedure"
+    },
     "creativeTab": {
       "value": "CUSTOM:CreativeTab"
     },
