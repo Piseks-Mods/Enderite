@@ -6,7 +6,5 @@
   "ingredient": {
     "item": "piseks_enderite:alien_stone"
   },
-  "result": {
-    "item": "piseks_enderite:enderite_shard"
-  }
+  "result": "piseks_enderite:enderite_shard"
 }

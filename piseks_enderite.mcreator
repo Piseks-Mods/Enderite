@@ -262,7 +262,7 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.16.5",
+    "currentGenerator": "forge-1.18.2",
     "credits": "Source code: https://github.com/Piseks-Mods/Piseks-Enderite",
     "modElementsPackage": "cz.pisekpiskovec.piseksenderite",
     "lockBaseModFiles": false

@@ -1,72 +1,53 @@
 
 package cz.pisekpiskovec.piseksenderite.block;
 
-import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.common.ToolType;
+import org.checkerframework.checker.units.qual.s;
 
-import net.minecraft.world.IWorldReader;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.loot.LootContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.BlockItem;
-import net.minecraft.block.material.MaterialColor;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.item.TieredItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.core.BlockPos;
 
 import java.util.List;
 import java.util.Collections;
 
-import cz.pisekpiskovec.piseksenderite.itemgroup.CreativeTabItemGroup;
-import cz.pisekpiskovec.piseksenderite.PiseksEnderiteModElements;
-
-@PiseksEnderiteModElements.ModElement.Tag
-public class EnderiteBlockBlock extends PiseksEnderiteModElements.ModElement {
-	@ObjectHolder("piseks_enderite:enderite_block")
-	public static final Block block = null;
-
-	public EnderiteBlockBlock(PiseksEnderiteModElements instance) {
-		super(instance, 4);
+public class EnderiteBlockBlock extends Block {
+	public EnderiteBlockBlock() {
+		super(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.PODZOL).sound(SoundType.METAL).strength(500f, 1200f).lightLevel(s -> 1)
+				.requiresCorrectToolForDrops());
 	}
 
 	@Override
-	public void initElements() {
-		elements.blocks.add(() -> new CustomBlock());
-		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(CreativeTabItemGroup.tab)).setRegistryName(block.getRegistryName()));
+	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
+		return 15;
 	}
 
-	public static class CustomBlock extends Block {
-		public CustomBlock() {
-			super(Block.Properties.create(Material.IRON, MaterialColor.OBSIDIAN).sound(SoundType.METAL).hardnessAndResistance(500f, 1200f)
-					.setLightLevel(s -> 1).harvestLevel(4).harvestTool(ToolType.PICKAXE).setRequiresTool());
-			setRegistryName("enderite_block");
-		}
+	@Override
+	public float getEnchantPowerBonus(BlockState state, LevelReader world, BlockPos pos) {
+		return 0.1f;
+	}
 
-		@Override
-		public int getOpacity(BlockState state, IBlockReader worldIn, BlockPos pos) {
-			return 15;
-		}
+	@Override
+	public boolean canHarvestBlock(BlockState state, BlockGetter world, BlockPos pos, Player player) {
+		if (player.getInventory().getSelected().getItem() instanceof TieredItem tieredItem)
+			return tieredItem.getTier().getLevel() >= 4;
+		return false;
+	}
 
-		@Override
-		public float getEnchantPowerBonus(BlockState state, IWorldReader world, BlockPos pos) {
-			return 0.1f;
-		}
-
-		@Override
-		public MaterialColor getMaterialColor() {
-			return MaterialColor.OBSIDIAN;
-		}
-
-		@Override
-		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
-			if (!dropsOriginal.isEmpty())
-				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(this, 1));
-		}
+	@Override
+	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
+		if (!dropsOriginal.isEmpty())
+			return dropsOriginal;
+		return Collections.singletonList(new ItemStack(this, 1));
 	}
 }

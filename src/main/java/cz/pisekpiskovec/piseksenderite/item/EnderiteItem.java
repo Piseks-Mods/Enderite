@@ -1,75 +1,51 @@
 
 package cz.pisekpiskovec.piseksenderite.item;
 
-import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
-import net.minecraft.world.World;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IArmorMaterial;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.resources.ResourceLocation;
 
 import cz.pisekpiskovec.piseksenderite.procedures.KenophobiaProcedureProcedure;
-import cz.pisekpiskovec.piseksenderite.itemgroup.CreativeTabItemGroup;
-import cz.pisekpiskovec.piseksenderite.PiseksEnderiteModElements;
+import cz.pisekpiskovec.piseksenderite.init.PiseksEnderiteModTabs;
 
-@PiseksEnderiteModElements.ModElement.Tag
-public class EnderiteItem extends PiseksEnderiteModElements.ModElement {
-	@ObjectHolder("piseks_enderite:enderite_helmet")
-	public static final Item helmet = null;
-	@ObjectHolder("piseks_enderite:enderite_chestplate")
-	public static final Item body = null;
-	@ObjectHolder("piseks_enderite:enderite_leggings")
-	public static final Item legs = null;
-	@ObjectHolder("piseks_enderite:enderite_boots")
-	public static final Item boots = null;
-
-	public EnderiteItem(PiseksEnderiteModElements instance) {
-		super(instance, 10);
-	}
-
-	@Override
-	public void initElements() {
-		IArmorMaterial armormaterial = new IArmorMaterial() {
+public abstract class EnderiteItem extends ArmorItem {
+	public EnderiteItem(EquipmentSlot slot, Item.Properties properties) {
+		super(new ArmorMaterial() {
 			@Override
-			public int getDurability(EquipmentSlotType slot) {
+			public int getDurabilityForSlot(EquipmentSlot slot) {
 				return new int[]{13, 15, 16, 11}[slot.getIndex()] * 42;
 			}
 
 			@Override
-			public int getDamageReductionAmount(EquipmentSlotType slot) {
+			public int getDefenseForSlot(EquipmentSlot slot) {
 				return new int[]{3, 6, 8, 3}[slot.getIndex()];
 			}
 
 			@Override
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 23;
 			}
 
 			@Override
-			public net.minecraft.util.SoundEvent getSoundEvent() {
-				return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_generic"));
+			public SoundEvent getEquipSound() {
+				return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.armor.equip_generic"));
 			}
 
 			@Override
-			public Ingredient getRepairMaterial() {
+			public Ingredient getRepairIngredient() {
 				return Ingredient.EMPTY;
 			}
 
-			@OnlyIn(Dist.CLIENT)
 			@Override
 			public String getName() {
 				return "enderite";
@@ -84,76 +60,70 @@ public class EnderiteItem extends PiseksEnderiteModElements.ModElement {
 			public float getKnockbackResistance() {
 				return 0.2f;
 			}
-		};
-		elements.items.add(
-				() -> new ArmorItem(armormaterial, EquipmentSlotType.HEAD, new Item.Properties().group(CreativeTabItemGroup.tab).isImmuneToFire()) {
-					@Override
-					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-						return "piseks_enderite:textures/models/armor/enderite___layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-					}
-
-					@Override
-					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-						super.onArmorTick(itemstack, world, entity);
-						double x = entity.getPosX();
-						double y = entity.getPosY();
-						double z = entity.getPosZ();
-
-						KenophobiaProcedureProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-					}
-				}.setRegistryName("enderite_helmet"));
-		elements.items.add(
-				() -> new ArmorItem(armormaterial, EquipmentSlotType.CHEST, new Item.Properties().group(CreativeTabItemGroup.tab).isImmuneToFire()) {
-					@Override
-					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-						return "piseks_enderite:textures/models/armor/enderite___layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-					}
-
-					@Override
-					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-						double x = entity.getPosX();
-						double y = entity.getPosY();
-						double z = entity.getPosZ();
-
-						KenophobiaProcedureProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-					}
-				}.setRegistryName("enderite_chestplate"));
-		elements.items.add(
-				() -> new ArmorItem(armormaterial, EquipmentSlotType.LEGS, new Item.Properties().group(CreativeTabItemGroup.tab).isImmuneToFire()) {
-					@Override
-					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-						return "piseks_enderite:textures/models/armor/enderite___layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-					}
-
-					@Override
-					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-						double x = entity.getPosX();
-						double y = entity.getPosY();
-						double z = entity.getPosZ();
-
-						KenophobiaProcedureProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-					}
-				}.setRegistryName("enderite_leggings"));
-		elements.items.add(
-				() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(CreativeTabItemGroup.tab).isImmuneToFire()) {
-					@Override
-					public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
-						return "piseks_enderite:textures/models/armor/enderite___layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
-					}
-
-					@Override
-					public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
-						double x = entity.getPosX();
-						double y = entity.getPosY();
-						double z = entity.getPosZ();
-
-						KenophobiaProcedureProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-								(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-					}
-				}.setRegistryName("enderite_boots"));
+		}, slot, properties);
 	}
 
+	public static class Helmet extends EnderiteItem {
+		public Helmet() {
+			super(EquipmentSlot.HEAD, new Item.Properties().tab(PiseksEnderiteModTabs.TAB_CREATIVE_TAB).fireResistant());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "piseks_enderite:textures/models/armor/enderite___layer_1.png";
+		}
+
+		@Override
+		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
+			KenophobiaProcedureProcedure.execute(entity);
+		}
+	}
+
+	public static class Chestplate extends EnderiteItem {
+		public Chestplate() {
+			super(EquipmentSlot.CHEST, new Item.Properties().tab(PiseksEnderiteModTabs.TAB_CREATIVE_TAB).fireResistant());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "piseks_enderite:textures/models/armor/enderite___layer_1.png";
+		}
+
+		@Override
+		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
+			KenophobiaProcedureProcedure.execute(entity);
+		}
+	}
+
+	public static class Leggings extends EnderiteItem {
+		public Leggings() {
+			super(EquipmentSlot.LEGS, new Item.Properties().tab(PiseksEnderiteModTabs.TAB_CREATIVE_TAB).fireResistant());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "piseks_enderite:textures/models/armor/enderite___layer_2.png";
+		}
+
+		@Override
+		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
+			KenophobiaProcedureProcedure.execute(entity);
+		}
+	}
+
+	public static class Boots extends EnderiteItem {
+		public Boots() {
+			super(EquipmentSlot.FEET, new Item.Properties().tab(PiseksEnderiteModTabs.TAB_CREATIVE_TAB).fireResistant());
+		}
+
+		@Override
+		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+			return "piseks_enderite:textures/models/armor/enderite___layer_1.png";
+		}
+
+		@Override
+		public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
+			KenophobiaProcedureProcedure.execute(entity);
+		}
+	}
 }

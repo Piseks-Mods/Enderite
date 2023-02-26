@@ -1,73 +1,50 @@
 
 package cz.pisekpiskovec.piseksenderite.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.World;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
-import net.minecraft.entity.LivingEntity;
-
-import java.util.stream.Stream;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.AbstractMap;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.LivingEntity;
 
 import cz.pisekpiskovec.piseksenderite.procedures.AcrophobiaProcedureProcedure;
-import cz.pisekpiskovec.piseksenderite.itemgroup.CreativeTabItemGroup;
-import cz.pisekpiskovec.piseksenderite.PiseksEnderiteModElements;
+import cz.pisekpiskovec.piseksenderite.init.PiseksEnderiteModTabs;
+import cz.pisekpiskovec.piseksenderite.init.PiseksEnderiteModItems;
 
-@PiseksEnderiteModElements.ModElement.Tag
-public class EnderitePickaxeItem extends PiseksEnderiteModElements.ModElement {
-	@ObjectHolder("piseks_enderite:enderite_pickaxe")
-	public static final Item block = null;
-
-	public EnderitePickaxeItem(PiseksEnderiteModElements instance) {
-		super(instance, 7);
-	}
-
-	@Override
-	public void initElements() {
-		elements.items.add(() -> new PickaxeItem(new IItemTier() {
-			public int getMaxUses() {
+public class EnderitePickaxeItem extends PickaxeItem {
+	public EnderitePickaxeItem() {
+		super(new Tier() {
+			public int getUses() {
 				return 2643;
 			}
 
-			public float getEfficiency() {
+			public float getSpeed() {
 				return 10f;
 			}
 
-			public float getAttackDamage() {
+			public float getAttackDamageBonus() {
 				return 5f;
 			}
 
-			public int getHarvestLevel() {
+			public int getLevel() {
 				return 5;
 			}
 
-			public int getEnchantability() {
+			public int getEnchantmentValue() {
 				return 23;
 			}
 
-			public Ingredient getRepairMaterial() {
-				return Ingredient.fromStacks(new ItemStack(EnderiteCrystalsItem.block));
+			public Ingredient getRepairIngredient() {
+				return Ingredient.of(new ItemStack(PiseksEnderiteModItems.ENDERITE_CRYSTALS.get()));
 			}
-		}, 1, -2.7999999999999998f, new Item.Properties().group(CreativeTabItemGroup.tab).isImmuneToFire()) {
-			@Override
-			public boolean hitEntity(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
-				boolean retval = super.hitEntity(itemstack, entity, sourceentity);
-				double x = entity.getPosX();
-				double y = entity.getPosY();
-				double z = entity.getPosZ();
-				World world = entity.world;
+		}, 1, -2.7999999999999998f, new Item.Properties().tab(PiseksEnderiteModTabs.TAB_CREATIVE_TAB).fireResistant());
+	}
 
-				AcrophobiaProcedureProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
-						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
-				return retval;
-			}
-		}.setRegistryName("enderite_pickaxe"));
+	@Override
+	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
+		AcrophobiaProcedureProcedure.execute(entity);
+		return retval;
 	}
 }
